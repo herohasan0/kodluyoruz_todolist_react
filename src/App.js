@@ -23,6 +23,7 @@ class App extends Component {
         // Delete yaparken kullanılabilmesi için bir her item için random bir id
         id: Math.random(),
         content: currentValue,
+        isChecked: false,
       };
 
       this.setState(
