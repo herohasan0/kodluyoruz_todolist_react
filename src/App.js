@@ -1,13 +1,14 @@
-import React, { Component } from "react";
-import TodoList from "./components/TodoList/TodoList";
-import "./App.css";
-import Form from "./components/Form/Form";
+import React, { Component } from 'react';
+import TodoList from './components/TodoList/TodoList';
+import './App.css';
+import Form from './components/Form/Form';
+import TodoHeader from './components/TodoHeader/TodoHeader';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      userInput: "",
+      userInput: '',
       todos: [],
     };
   }
@@ -17,7 +18,7 @@ class App extends Component {
     // input'ta yazılı olan string değer
     const currentValue = this.state.userInput;
 
-    if (this.state.userInput !== "") {
+    if (this.state.userInput !== '') {
       const userInput = {
         // Delete yaparken kullanılabilmesi için bir her item için random bir id
         id: Math.random(),
@@ -33,7 +34,7 @@ class App extends Component {
         () => {
           // Input'tan alınan değer state'e eklendikten sonra input'u temizliyoruz
           this.setState({
-            userInput: "",
+            userInput: '',
           });
         }
       );
@@ -50,6 +51,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
+        <TodoHeader Title="Hayatını biraz düzene sokmak için EKLE bakalımm 💪" />
         <Form
           userInput={this.state.userInput}
           onInputChange={this.onInputChange}
